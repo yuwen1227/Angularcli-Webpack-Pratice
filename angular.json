@@ -11,9 +11,12 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
-            "outputPath": "dist/webpacktest",
+            "customWebpackConfig": {
+              "path": "./webpack.config.js"
+           },
+            "outputPath": "dist/eopen",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -119,6 +122,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "webpacktest"
+    }
+  },
+  "defaultProject": "webpacktest",
+  "cli": {
+    "analytics": false
+  }
 }
